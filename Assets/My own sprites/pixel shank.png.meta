@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fbf45647d9c7d464e80a4a7bc11c3fd9
+guid: a3dedf5111906a141a1ff3d55a3a6da6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8861480726252175340
-    second: shark_0
+      213: 5234410044585172186
+    second: make a top-down pixe_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shark_0
+      name: make a top-down pixe_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2274
-        height: 1269
+        width: 1024
+        height: 1531
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cef3b3835cd4afa70800000000000000
-      internalID: 8861480726252175340
+      spriteID: adc5c34d33c54a840800000000000000
+      internalID: 5234410044585172186
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      shark_0: 8861480726252175340
+      make a top-down pixe_0: 5234410044585172186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
