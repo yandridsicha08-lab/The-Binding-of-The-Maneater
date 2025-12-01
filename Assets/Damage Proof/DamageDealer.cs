@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public int damageAmount = 1;  // how much damage it deals
+    public int damageAmount = 25;  
 
     void OnTriggerEnter2D(Collider2D other)
     {

@@ -1,12 +1,15 @@
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
-    public int currentHealth;
+    public int maxHealth = 100;
+    public int currentHealth = 100;
 
     void Start()
     {
+
         currentHealth = maxHealth;
         HealthUI.instance.UpdateHealth(currentHealth, maxHealth);
     }
@@ -22,8 +25,9 @@ public class PlayerHealth : MonoBehaviour
             Die();
     }
 
-    void Die()
+    public void Die()
     {
-        Debug.Log("Player died!");
+        Time.timeScale = 0f;
+        
     }
 }

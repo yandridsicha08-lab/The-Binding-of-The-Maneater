@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float baseSpeed = 10f;
+
+    public PlayerHealth PlayerHealthReal;
     
     public float speed = 10f;
 
-    public Transform sharkVisual; // assign your shark sprite object here
+    public Transform sharkVisual; 
     
     public float rotationSpeed = 5f;
     
@@ -15,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 50f;
     void Update()
     {
+        if (PlayerHealthReal.currentHealth <= 0)
+        {
+            return;
+        }
+
         Vector3 moveDirection = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
@@ -35,23 +42,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // NEW -> Reset speed when not sprinting
+            
             speed = baseSpeed;
         }
         
-        // Normalize so diagonal isn't faster
+        
         moveDirection = moveDirection.normalized;
 
-        // Move the parent (world space, unaffected by rotation)
+        
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
 
-        // Rotate ONLY the visual shark
+        
         if (moveDirection != Vector3.zero)
         {
-            // Calculate the target angle
+            
             float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
 
-            // Smoothly rotate toward the target angle
+            
             float angle = Mathf.LerpAngle(sharkVisual.eulerAngles.z, targetAngle, rotationSpeed * Time.deltaTime);
 
             sharkVisual.rotation = Quaternion.Euler(0, 0, angle);
@@ -59,11 +66,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveDirection.x < 0)
         {
-            sharkVisual.localScale = new Vector3(1, -1, 1);   // flipped vertically
+            sharkVisual.localScale = new Vector3(1, -1, 1);   
         }
         else if (moveDirection.x > 0)
         {
-            sharkVisual.localScale = new Vector3(1, 1, 1);    // normal
+            sharkVisual.localScale = new Vector3(1, 1, 1);    
         }
     }
 }
