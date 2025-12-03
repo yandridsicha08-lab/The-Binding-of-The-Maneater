@@ -3,15 +3,17 @@ using TMPro;
 public class DeathUI : MonoBehaviour
 {
     public static DeathUI instance;
-    public TextMeshPro deathText;
-    public PlayerHealth PlayerHealth;
+    public TextMeshProUGUI deathText;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (PlayerHealth.currentHealth <= 0) ;
-        {
-            
-        }
+        instance = this;
+
+    }
+
+    public void UpdateDeath()
+    {
+        deathText.text = "You died! Skill Issue!";
     }
 }

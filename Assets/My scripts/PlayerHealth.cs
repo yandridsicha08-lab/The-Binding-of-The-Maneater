@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public DeathUI deathText;
     public int maxHealth = 100;
     public int currentHealth = 100;
 
@@ -28,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         Time.timeScale = 0f;
+
+        DeathUI.instance.UpdateDeath();
         
     }
 }
